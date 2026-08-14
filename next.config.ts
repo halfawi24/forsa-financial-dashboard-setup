@@ -33,6 +33,7 @@ const securityHeaders = [
     key: "X-Content-Type-Options",
     value: "nosniff",
   },
+  // Keep for legacy browser defense in depth even though CSP frame-ancestors is authoritative in modern browsers.
   {
     key: "X-Frame-Options",
     value: "DENY",
