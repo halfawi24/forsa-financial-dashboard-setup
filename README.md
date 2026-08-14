@@ -4,5 +4,5 @@ Next.js boilerplate for building web applications. Includes theme system, UI com
 
 ## Security
 
-- Security policy: `/home/runner/work/forsa-financial-dashboard-setup/forsa-financial-dashboard-setup/SECURITY.md`
-- Emergency lockdown runbook: `/home/runner/work/forsa-financial-dashboard-setup/forsa-financial-dashboard-setup/docs/security/access-lockdown-runbook.md`
+- Security policy: [SECURITY.md](./SECURITY.md)
+- Emergency lockdown runbook: [access-lockdown-runbook.md](./docs/security/access-lockdown-runbook.md)
