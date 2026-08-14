@@ -10,6 +10,7 @@ const contentSecurityPolicy = [
   "object-src 'none'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
+  // Next.js injects inline runtime scripts; move to nonce-based CSP if stricter script-src is later required.
   `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   `connect-src 'self'${isDevelopment ? " ws: wss:" : ""}`,

@@ -159,7 +159,6 @@ export const api = {
     maxDrawdown: number;
     var95: number;
   }> {
-    void _portfolioId;
     await new Promise(resolve => setTimeout(resolve, 300));
 
     return {
@@ -178,8 +177,6 @@ export const api = {
     _portfolioId: string,
     _period: 'ytd' | '1y' | '3y' | '5y'
   ): Promise<Array<{ category: string; return: number; contribution: number }>> {
-    void _portfolioId;
-    void _period;
     await new Promise(resolve => setTimeout(resolve, 400));
 
     return [
@@ -203,7 +200,6 @@ export const api = {
       citations: Array<{ source: string; confidence: number }>;
     }>;
   }> {
-    void _portfolioId;
     await new Promise(resolve => setTimeout(resolve, 600));
 
     return {

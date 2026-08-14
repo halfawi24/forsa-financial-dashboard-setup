@@ -4,10 +4,10 @@ Next.js financial dashboard starter with analytics pages, UI components, and exa
 
 ## Security posture
 
-- Runtime security headers and a baseline Content Security Policy are configured in `/home/runner/work/forsa-financial-dashboard-setup/forsa-financial-dashboard-setup/next.config.ts`.
-- Example API responses in `/home/runner/work/forsa-financial-dashboard-setup/forsa-financial-dashboard-setup/src/app/api/hello/route.ts` now use stricter input handling and `Cache-Control: no-store`.
-- Public environment variables are documented in `/home/runner/work/forsa-financial-dashboard-setup/forsa-financial-dashboard-setup/.env.example`.
-- Manual GitHub account, token, SSH, branch protection, and repository security steps are documented in `/home/runner/work/forsa-financial-dashboard-setup/forsa-financial-dashboard-setup/SECURITY.md`.
+- Runtime security headers and a baseline Content Security Policy are configured in `next.config.ts`.
+- Example API responses in `src/app/api/hello/route.ts` now use stricter input handling and `Cache-Control: no-store`.
+- Public environment variables are documented in `.env.example`.
+- Manual GitHub account, token, SSH, branch protection, and repository security steps are documented in `SECURITY.md`.
 
 ## Environment variables
 
