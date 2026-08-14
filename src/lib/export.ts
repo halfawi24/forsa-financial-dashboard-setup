@@ -13,6 +13,15 @@ export interface ExportData {
   summary: string;
 }
 
+function escapeHtml(value: unknown): string {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
 /**
  * Generate CSV export
  */
@@ -71,22 +80,22 @@ export function generateJSON(data: ExportData): string {
  */
 export function generatePDFHTML(data: ExportData): string {
   const metricsHTML = Object.entries(data.metrics)
-    .map(([key, value]) => `<tr><td>${key}</td><td>${value}</td></tr>`)
+    .map(([key, value]) => `<tr><td>${escapeHtml(key)}</td><td>${escapeHtml(value)}</td></tr>`)
     .join('');
 
   const chartsHTML = data.charts
     .map(chart => `
-      <h3>${chart.name}</h3>
+      <h3>${escapeHtml(chart.name)}</h3>
       <table border="1" cellpadding="8">
         <thead>
           ${Object.keys(chart.data[0] || {})
-            .map(k => `<th>${k}</th>`)
+            .map(k => `<th>${escapeHtml(k)}</th>`)
             .join('')}
         </thead>
         <tbody>
           ${chart.data.map(row => `
             <tr>
-              ${Object.values(row).map(v => `<td>${v}</td>`).join('')}
+              ${Object.values(row).map(v => `<td>${escapeHtml(v)}</td>`).join('')}
             </tr>
           `).join('')}
         </tbody>
@@ -99,7 +108,7 @@ export function generatePDFHTML(data: ExportData): string {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>${data.title}</title>
+  <title>${escapeHtml(data.title)}</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     h1 { color: #2c3e50; border-bottom: 3px solid #6b7a6e; padding-bottom: 10px; }
@@ -114,12 +123,12 @@ export function generatePDFHTML(data: ExportData): string {
   </style>
 </head>
 <body>
-  <h1>${data.title}</h1>
-  <p class="generated">Generated: ${data.date}</p>
+  <h1>${escapeHtml(data.title)}</h1>
+  <p class="generated">Generated: ${escapeHtml(data.date)}</p>
   
   <div class="summary">
     <h2>Summary</h2>
-    <p>${data.summary}</p>
+    <p>${escapeHtml(data.summary)}</p>
   </div>
 
   <h2>Key Metrics</h2>
