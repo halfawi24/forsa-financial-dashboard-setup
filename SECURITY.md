@@ -1,6 +1,6 @@
 # Security Incident Response Runbook
 
-This runbook is for emergency repository/account compromise response for `halfawi24`.
+This runbook is for emergency repository/account compromise response for `<owner-username>`.
 
 ## 1) Immediate containment (first 15 minutes)
 
