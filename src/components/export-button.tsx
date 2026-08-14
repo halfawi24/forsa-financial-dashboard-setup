@@ -74,7 +74,7 @@ export function ExportButton({ data }: ExportButtonProps) {
       });
       
       setIsOpen(false);
-    } catch (error) {
+    } catch {
       addNotification({
         type: 'error',
         title: 'Export Failed',

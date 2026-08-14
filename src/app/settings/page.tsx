@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/cards';
 import { Navigation } from '@/components/navigation';
 import { useTheme } from 'next-themes';
-import { Settings, Moon, Sun, Bell, Download, Lock } from 'lucide-react';
+import { Settings, Sun, Bell, Download, Lock } from 'lucide-react';
 
 export default function SettingsPage() {
   const { theme, setTheme } = useTheme();

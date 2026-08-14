@@ -4,10 +4,9 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/cards';
 import { PortfolioLineChart } from '@/components/charts/portfolio-line-chart';
-import { PerformanceBarChart } from '@/components/charts/performance-bar-chart';
 import { MetricsGrid } from '@/components/charts/metrics-grid';
 import { Navigation } from '@/components/navigation';
-import { BarChart3, PieChart as PieChartIcon, TrendingUp } from 'lucide-react';
+import { PieChart as PieChartIcon, TrendingUp } from 'lucide-react';
 
 const generateAnalyticsData = () => {
   return Array.from({ length: 30 }, (_, i) => ({
